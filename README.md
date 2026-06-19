@@ -41,7 +41,7 @@ graph TD
 
 ## 📊 A/B Testing & Success Metrics
 
-To validate the TrustEngine architecture safely, we will deploy a phased experimentation framework over a 4-week period.
+To validate the TrustEngine architecture safely, we will deploy a phased experimentation framework over 4 weeks.
 
 ### Experiment Setup
 * **Target Audience:** 5% of active mobile app users (randomly bucketed).
