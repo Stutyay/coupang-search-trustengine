@@ -1,10 +1,37 @@
 # Project TrustEngine: Compliant & Personalized Search Architecture for Coupang
 
-Prepared by: [Your Name] | B.Sc. Computer Science (Expected 2027)Target Role: Search Product Manager Intern📌 Executive Summary & Market ContextIn light of recent regulatory scrutiny from the Korea Fair Trade Commission (FTC) regarding private-label product ranking bias and review manipulation, Coupang faces a critical product challenge. The objective is to design a search and recommendation engine that maximizes search-to-cart conversion rates and protects gross margin without relying on hardcoded algorithmic biases.Project TrustEngine proposes a shift from a business-prioritized ranking model to an objective, hyper-personalized vector search ecosystem. By leveraging Natural Language Processing (NLP) and Retrieval-Augmented Generation (RAG), Coupang can naturally elevate high-value items based on individual user data while autonomously sanitizing the review ecosystem to restore consumer trust.🚀 Core Product FeaturesFeature NameProduct Value & User EmpathyTechnical MechanismKey Metric ImpactBudget-Driven Vector SearchConnects users with affordable items naturally, without forced global rankings.Embeds individual historical budget thresholds directly into the dense-retrieval vector space.Search-to-Cart Conversion RateReview Integrity EngineEnsures users feel safe relying on platform social proof.A RAG pipeline flagging anomalous review velocities or semantic similarity clusters.Net Promoter Score (NPS)Dynamic Transparency BadgesRestores buyer confidence and platform compliance.UI indicators explaining recommendation logic (e.g., "Top Value based on your price history").Search Click-Through Rate (CTR)⚙️ Technical Architecture OverviewTo achieve a compliant, high-converting search loop, the architecture must move away from fixed corporate priority weights and rely on intelligent, dynamic retrieval.Code snippetgraph TD
+**Prepared by:** [Your Name] | B.Sc. Computer Science (Expected 2027)  
+**Target Role:** Search Product Manager Intern
+
+---
+
+## 📌 Executive Summary & Market Context
+
+In light of recent regulatory scrutiny from the Korea Fair Trade Commission (FTC) regarding private-label product ranking bias and review manipulation, Coupang faces a critical product challenge. The objective is to design a search and recommendation engine that maximizes search-to-cart conversion rates and protects gross margin without relying on hardcoded algorithmic biases. 
+
+**Project TrustEngine** proposes a shift from a business-prioritized ranking model to an objective, hyper-personalized vector search ecosystem. By leveraging Natural Language Processing (NLP) and Retrieval-Augmented Generation (RAG), Coupang can naturally elevate high-value items based on individual user data while autonomously sanitizing the review ecosystem to restore consumer trust.
+
+---
+
+## 🚀 Core Product Features
+
+| Feature Name | Product Value & User Empathy | Technical Mechanism | Key Metric Impact |
+| :--- | :--- | :--- | :--- |
+| **Budget-Driven Vector Search** | Connects users with affordable items naturally, without forced global rankings. | Embeds individual historical budget thresholds directly into the dense-retrieval vector space. | Search-to-Cart Conversion Rate |
+| **Review Integrity Engine** | Ensures users feel safe relying on platform social proof. | A RAG pipeline flagging anomalous review velocities or semantic similarity clusters. | Net Promoter Score (NPS) |
+| **Dynamic Transparency Badges** | Restores buyer confidence and platform compliance. | UI indicators explaining recommendation logic (e.g., "Top Value based on your price history"). | Search Click-Through Rate (CTR) |
+
+---
+
+## ⚙️ Technical Architecture & System Design Flow
+
+To achieve a compliant, high-converting search loop, the architecture must move away from fixed corporate priority weights and rely on intelligent, dynamic retrieval.
+
+```mermaid
+graph TD
     A[User Search Query] --> B[NLP Query Processing: spaCy]
     B --> C[Embedding Generation: Gemini API]
     C --> D[Hybrid Retrieval Layer: FAISS / Qdrant + BM25]
     D --> E[Review Integrity Filter: RAG Pipeline]
     E --> F[Hyper-Personalization Re-ranking: User Budget Mapping]
     F --> G[Final Compliant Search Results Rendered]
-System Data Flow Phase 1: Query Processing User queries are parsed using spaCy for Named Entity Recognition (NER) to extract intent, categories, and price sensitivity. Text is then converted into dense vectors via the Gemini API.Phase 2: Hybrid Retrieval. A broad set of relevant product candidates is retrieved using a high-performance vector database, such as FAISS or Qdrant, for semantic similarity, combined with lexical search (BM25) to ensure exact brand matches are retained.Phase 3: RAG-Powered Integrity FilterBefore rendering, a Retrieval-Augmented Generation pipeline cross-references recent product reviews against historical baselines. Items with sudden, highly similar bursts of positive text are temporarily downgraded in the trust score. Phase 4: Personalisation Re-ranking. The refined list is re-ranked using a lightweight ML model trained on the user's historical purchase data. Affordable private-label products naturally rise to the top for bargain-hunting users, satisfying compliance without sacrificing conversion.📊 A/B Testing & Success MetricsTo validate the TrustEngine architecture, a phased experimentation framework will be deployed.Control Group (A): Current Coupang search ranking system.Variant Group (B): The TrustEngine personalized, unbiased hybrid search loop.Target Metrics:Primary Metric: Search-to-Cart Conversion Rate.Secondary Metric: Click-Through Rate (CTR) on organically ranked, non-sponsored items.Guardrail Metric: Overall Gross Merchandise Value (GMV) must not drop by more than 0.5% during the experiment, ensuring compliance pivots do not negatively impact revenue.💻 Technical Implementation DetailsNote: Technical proof-of-concept scripts demonstrating the NLP query parsing and vector retrieval logic can be found in the src/ directory of this repository.
