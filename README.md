@@ -1,6 +1,6 @@
 # Project TrustEngine: Compliant & Personalized Search Architecture for Coupang
 
-**Prepared by:** [Your Name] | B.Sc. Computer Science (Expected 2027)
+**Prepared by:** Stuti Gupta| B.Sc. Computer Science (Expected 2027)
 **Target Role:** Search Product Manager Intern
 
 ---
